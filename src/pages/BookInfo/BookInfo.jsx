@@ -20,14 +20,17 @@ function BookInfo({ bookList, wishList, setWishList }) {
     <>
       <div className="book-info">
         <h1>{selectedBook.volumeInfo.title}</h1>
-        <img
+		<div className="content">
+		<img
           src={selectedBook.volumeInfo.imageLinks.thumbnail}
           alt="book cover"
           className="book-info__img"
         />
-        <p>{selectedBook.volumeInfo.description}</p>
+		<div className="book-info__description"> <p > Description: {selectedBook.volumeInfo.description}</p></div>
+		</div>
+        
       </div>
-      <button onClick={clickHandler}>Add</button>
+      <button onClick={clickHandler} className="book-info_button">Add</button>
     </>
   );
 }

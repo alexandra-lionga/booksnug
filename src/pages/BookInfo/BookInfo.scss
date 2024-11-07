@@ -1,0 +1,41 @@
+.book-info{
+    display: flex;
+    flex-direction: column;
+    h1{
+        color: #d43f00;
+        font-size: 2rem;
+        font-family: 'Georgia', serif;
+        z-index: 2; /* Make sure title is above the overlay */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    &__img{
+        width:20%;
+        height:100%;
+        border-radius: 12px;
+
+      
+    }
+    &-description{
+        height:300px;
+        width:500px;
+
+    }
+    &_button{
+        width:200px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: #d43f00;
+    }
+}
+
+.content{
+    display: flex;
+    align-items: flex-start;
+    z-index: 2;
+    margin-top: 20px;
+    gap: 85px;
+
+}
