@@ -3,9 +3,12 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 50px;
+	padding: 20px;
+	border-radius: 15px;
+	background-color: rgb(95, 58, 58);
 }
 
 h1 {
 	font-size: 40px;
+	text-transform: uppercase;
 }

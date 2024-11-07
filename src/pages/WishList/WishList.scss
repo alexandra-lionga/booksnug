@@ -1,0 +1,18 @@
+.wishList {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 100px;
+	gap: 80px;
+	justify-content: center;
+	align-items: center;
+
+	article {
+		:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.wish-name {
+	text-align: center;
+}

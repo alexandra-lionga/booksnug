@@ -4,11 +4,14 @@ import { Link } from "react-router-dom";
 
 function BookList({ bookList }) {
 	if (!bookList) {
-		return <div>Loading...</div>;
+		return <></>;
 	} else {
+		const newList = bookList.filter((book) => {
+			return book.volumeInfo.imageLinks !== undefined;
+		});
 		return (
 			<ul>
-				{bookList.map((book) => (
+				{newList.map((book) => (
 					<Link to={`book/${book.id}`} key={book.id} className="link">
 						<li>
 							<BookCard book={book} />
