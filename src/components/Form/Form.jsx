@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Form.scss";
+import axios from "axios";
+import {API_BASE_URL, API_KEY} from "../../utils.js";
+
 
 function Form() {
 	const [checkedItems, setCheckedItems] = useState([]);
+	const [bookList, setBookList]=useState(null);
 
 	function handleOnChange(event) {
 		if (event.target.checked) {
@@ -12,10 +16,26 @@ function Form() {
 			setCheckedItems(newArr);
 		}
 	}
+	
+	const getBooks= async (keyword,genre)=>{
+		try {
+			const response= await axios.get(
+				`${API_BASE_URL}volumes?q=${keyword}+subject:${genre}&key=${API_KEY}&maxResults=10&printType=books`
+			)
+			console.log(response);
+		} catch (error) {
+			console.log(error);
+		}
+	}
+
 	function handleSubmit(event) {
 		event.preventDefault();
-		console.log(checkedItems);
+		//console.log(checkedItems);
+		getBooks(checkedItems.join("+"), 'winter');
+
 	}
+
+	"https://www.googleapis.com/books/v1/volumes?q=winter+subject:classics+comedy&key=AIzaSyBfHqmkdPDVvT19n8VH_grxR2DJeHkcs7k&maxResults=10&printType=books"
 
 	return (
 		<form onSubmit={handleSubmit}>
