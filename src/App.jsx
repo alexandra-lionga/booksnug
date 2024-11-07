@@ -7,21 +7,32 @@ import BookInfo from "./pages/BookInfo/BookInfo";
 import WishList from "./pages/WishList/WishList";
 
 function App() {
-
 	const [bookList, setBookList] = useState(null);
 	const [wishList, setWishList] = useState([]);
 
 	return (
-		<>
+		<div className="app">
 			<BrowserRouter>
 				<Header />
 				<Routes>
-					<Route path="/" element={<HomePage bookList={bookList} setBookList={setBookList}/>} />
-					<Route path="book/:bookId" element={<BookInfo  bookList={bookList} setWishList={setWishList} wishList={wishList}/>} />
-					<Route path="wishlist" element={<WishList />} />
+					<Route
+						path="/"
+						element={<HomePage bookList={bookList} setBookList={setBookList} />}
+					/>
+					<Route
+						path="book/:bookId"
+						element={
+							<BookInfo
+								bookList={bookList}
+								setWishList={setWishList}
+								wishList={wishList}
+							/>
+						}
+					/>
+					<Route path="wishlist" element={<WishList wishList={wishList} />} />
 				</Routes>
 			</BrowserRouter>
-		</>
+		</div>
 	);
 }
 

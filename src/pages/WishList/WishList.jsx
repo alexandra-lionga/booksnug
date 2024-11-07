@@ -1,6 +1,7 @@
 import "./WishList.scss";
 
-function WishList() {
+function WishList({ wishList }) {
+	console.log(wishList);
 	return <></>;
 }
 
