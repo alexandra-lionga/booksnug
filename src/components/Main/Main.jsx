@@ -1,11 +1,11 @@
 import Form from "../Form/Form";
 import "./Main.scss";
 
-function Main() {
+function Main({ setBookList }) {
 	return (
 		<main>
 			<h1>What is your winter escape?</h1>
-			<Form />
+			<Form setBookList={setBookList} />
 		</main>
 	);
 }
