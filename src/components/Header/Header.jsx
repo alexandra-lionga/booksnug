@@ -1,11 +1,16 @@
+import { NavLink } from "react-router-dom";
 import "./Header.scss";
 
 function Header() {
 	return (
 		<nav>
 			<ul>
-				<li>Home</li>
-				<li>Wishlist</li>
+				<NavLink to="/" className="link">
+					<li>Home</li>
+				</NavLink>
+				<NavLink to="wishlist" className="link">
+					<li>Wishlist</li>
+				</NavLink>
 			</ul>
 		</nav>
 	);
